@@ -16,7 +16,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Api( description = "API pour les opérations CRUD sur les produits")
 @RestController
@@ -81,5 +83,15 @@ public class ProductController {
     @PutMapping (value = "/Produits")
     public void updateProduit(@RequestBody Product product) {
         productDao.save(product);
+    }
+
+    @GetMapping(value="/Produits/AdminProduits")
+    public Map<String,Integer> calculerMargeProduit() {
+        List<Product> products = productDao.findAll();
+        Map<String,Integer> maMap = new HashMap<>();
+        for(Product p: products) {
+            maMap.put(p.toString(),p.getPrix() - p.getPrixAchat());
+        }
+        return maMap;
     }
 }
