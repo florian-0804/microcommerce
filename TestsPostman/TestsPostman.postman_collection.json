@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "f8cfcd05-d0d8-4094-9b3d-a3b22afbe533",
+		"name": "TestsPostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/Produits/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/Produits/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY Nom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/Produits/nom/ordi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"nom",
+						"ordi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Prix GREATER THAN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/Produits/prixPlusQue/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"prixPlusQue",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Marge",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/AdminProduits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"AdminProduits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ORDER BY Nom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/Produits/orderNom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"orderNom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"nom\": \"Poney en bois\",\n\"prix\": 145,\n\"prixAchat\": 100\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT EXCEPTION Nom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"nom\": \"Poney en bois cracheur de feu\",\n\"prix\": 145,\n\"prixAchat\": 100\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT EXCEPTION Prix",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"nom\": \"Poney en bois\",\n\"prix\": 0,\n\"prixAchat\": 100\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": 1,\n\"nom\": \"Nouveau nom nouvelle vie\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

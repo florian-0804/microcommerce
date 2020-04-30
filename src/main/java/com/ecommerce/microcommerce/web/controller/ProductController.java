@@ -43,7 +43,7 @@ public class ProductController {
 
     //Récupérer un produit par son Id
     @ApiOperation(value = "Récupère un produit grâce à son ID à condition que celui-ci soit en stock!")
-    @GetMapping(value = "/Produits/{id}")
+    @GetMapping(value = "/Produits/GetById/{id}")
     public Product afficherUnProduit(@PathVariable int id) {
         Product produit = productDao.findById(id);
         if (produit==null) throw new ProduitIntrouvableException("Le produit avec l'id " + id + " est INTROUVABLE.");
@@ -51,16 +51,15 @@ public class ProductController {
         return productDao.findById(id);
     }
 
-    /*@GetMapping(value = "test/produits/{prixLimit}")
+    @GetMapping(value = "/Produits/PrixLimit/{prixLimit}")
     public List<Product> testeDeRequetesPrix(@PathVariable int prixLimit) {
         return productDao.findByPrixGreaterThan(600);
-    }*/
+    }
 
-    @GetMapping(value = "test/produits/{recherche}")
+    @GetMapping(value = "/Produits/Recherche/{recherche}")
     public List<Product> testeDeRequetesNom(@PathVariable String recherche) {
         return productDao.findByNomLike("%" + recherche + "%");
     }
-
 
     //ajouter un produit
     @PostMapping(value = "/Produits")
